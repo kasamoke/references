@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql'); 
-//const getConnection = require('./dbconnection');
 const getConnection = require('./dbconnection');
 
 
@@ -19,9 +18,6 @@ const getConnection = require('./dbconnection');
             connection.release();
         });
     });
-
-
-
 
 app.listen(3000, () => {
     console.log("Srver started on port 3000");
