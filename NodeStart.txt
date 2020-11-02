@@ -1,0 +1,31 @@
+const express = require('express');
+const app = express();
+
+//will be required for parsing the request body
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+//route 1
+app.use('/default',(req,res)=>{
+    res.end("This is the default route, try '/intro' ");
+});
+
+//route 2
+app.use('/intro',(req,res)=>{
+    res.send("Hello World");
+});
+
+//starting the server to listen the requests
+app.listen(8080, () => {
+    console.log("Listening on Port: 8080");
+});
+
+
+PS: run command:
+nodemon start app.js
+
+NOTE:
+in chrome use -
+localhost:8080/default or localhost:8080/intro
